@@ -15,6 +15,8 @@ class Celula:
     x, y = (-1, -1)
     valor = ""
     valor2 = ""
+    valor3 = 0
+    valor4 = 0
     
     def __init__(self, x=-1, y=-1, valor="", valor2=""):
         self.x = x
@@ -361,17 +363,21 @@ class Labirinto:
                     if passou_esquerda:
                         celulas_livres.append(celula_esquerda)
 
-                    pos = random.randint(0,len(celulas_livres)-1)
-                    celula_destino = celulas_livres[pos]
+                    # pos = random.randint(0,len(celulas_livres)-1)
+                    celulas_livres = sorted(celulas_livres, key=lambda c: c.valor3)
+
+                    celula_destino = celulas_livres[0]
                     celula_destino.valor = self.minotauro.valor
                     celula_destino.valor2 = self.minotauro.valor2
 
                     if celula.valor == self.minotauro.valor:
                         self.labirinto[celula.y][celula.x].valor = self.minotauro.valor2
+                        self.labirinto[celula.y][celula.x].valor3 += 1
 
                     direcao = Direcao()
                     return celula_destino, direcao
             
+            self.labirinto[celula.y][celula.x].valor3 += 1
             direcao = Direcao()
             return celula, direcao
 
@@ -381,6 +387,7 @@ class Labirinto:
 
         if celula.valor == self.minotauro.valor:
            self.labirinto[celula.y][celula.x].valor = self.minotauro.valor2
+           self.labirinto[celula.y][celula.x].valor3 += 1
         
         return celula_destino, direcao
 
