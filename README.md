@@ -10,6 +10,7 @@ Este projeto tem como objetivo emular a criação de labirintos de forma procedu
 * Personagem tenta encontrar saída do labirinto 
 
 ### Funcionalidades a implementar:
+* Melhorar algoritmo de fuga 
 * Controlar personagem para caminhar no labirinto
 * Criar colisão entre personagens 
 * Criar penumbra limitando visão do labirinho de 3 x 3 espaços
