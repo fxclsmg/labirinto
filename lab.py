@@ -19,7 +19,7 @@ lab.fundo = "0"
 lab.porta = tf.formatar("2","estilo_negrito")
 lab.porta = tf.formatar(lab.porta,"texto_verde")
 
-aberturas = 2
+aberturas = 10
 
 # altura matriz, largura matriz, valor das celulas
 
@@ -27,7 +27,7 @@ lab.gerar_matriz(25, 23)
 lab.colocar_parede_borda_matriz() 
 lab.set_abertura(aberturas)
 lab.inserir_porta_pocicao_aleatoria_borda_matriz() 
-lab.inserir_caminho_com_tamanho_curvas(150, 50)
+lab.inserir_caminho_com_tamanho_curvas(20, 3)
 
 rastro = "3"
 rastro = tf.formatar(rastro, "texto_amarelo")
@@ -47,7 +47,7 @@ while fim:
     if lab.minotauro_saiu():
         fim = False
 
-    time.sleep(0.111)
+    time.sleep(0.1)
 
     lab.minotauro, direcao = lab.algoritmo_mao_direira(lab.minotauro, direcao)
 
